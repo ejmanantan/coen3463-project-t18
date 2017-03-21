@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  .row
+    .col-md-4
+    .col-md-4
+      h1 
+       center Edit a Schedule
+      form(role="form", method="post", action="/thurs/#{thursday.id}")
+          .form-group
+            label(for="fullname") Student Name
+            input#fullname.form-control(name="name", type="text",  value=thursday.name, oninvalid="this.setCustomValidity('Enter the Full Name')",  oninput="setCustomValidity('')", pattern ='[A-Za-z].{1,}', placeholder = 'Juan Dela Cruz', required)
+
+          .form-group
+            label(for="fullname") Student Number
+            input#fullname.form-control(name="sn", type="text",  value=thursday.sn, oninvalid="this.setCustomValidity('Enter Student Number Name')",  oninput="setCustomValidity('')",  pattern = '[0-9A-Z-].{1,15}', placeholder = '2010-01234-MN-0' required)
+
+          .form-group
+            label(for="fullname") Email
+            input#fullname.form-control(name="email", type="email ", value=thursday.email, oninvalid="this.setCustomValidity('Enter your E-mail Name')",  oninput="setCustomValidity('')",  placeholder = 'juan.dc@gmail.com' required)
+
+          .form-group
+            label(for="nickname") Room Number
+            br
+            input#fullname.form-control(name="room", type="text",  value=thursday.room, oninvalid="this.setCustomValidity('Enter the Room Number')",  oninput="setCustomValidity('')", pattern = '[0-9A-Z].{6}', placeholder = 'CEA 316',  required) 
+
+          .form-group
+            label(for="fullname") Start of Time
+            input#fullname.form-control(name="stime", type="text", value=thursday.stime,  oninvalid="this.setCustomValidity('Enter the start time')",  oninput="setCustomValidity('')",  pattern = '[0-9:].{1,}', placeholder = '7:30', required)
+
+          .form-group
+            label(for="job") End of Time
+            br
+            input#fullname.form-control(name="etime", type="text",  value=thursday.etime, oninvalid="this.setCustomValidity('Enter end of time')",  oninput="setCustomValidity('')",  pattern = '[0-9:].{1,}', placeholder = '10:30', required)
+
+          .form-group
+            label(for="youtube") Purpose
+            input#fullname.form-control(name="purps", type="text",  value=thursday.purps, oninvalid="this.setCustomValidity('Enter the purpose')",  oninput="setCustomValidity('')",  pattern = '[A-Za-z].{1,}', placeholder = 'Event for Seminars', required)
+
+        
+            button.btn.btn-primary(type="submit") Edit Schedule
+
+        |   
+      a(href='/thurs/' + thursday._id+ '/delete') delete
+
+   

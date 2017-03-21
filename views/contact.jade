@@ -1,0 +1,93 @@
+extends layout
+
+block content
+	.jumbotron
+		.container
+			h1 Computer Engineering Laboratory
+			i
+				p Room Reservation
+		.container
+			.picsx
+
+	.container
+		center
+			form(method='post', action='contact/send')
+
+				.form-group
+					label First Name 
+					input.form-control(type = 'text', name='fname', oninvalid="this.setCustomValidity('Enter First Name')",  oninput="setCustomValidity('')",pattern ='[A-Za-z].{1,}', placeholder = 'Juan', required)
+					br
+
+					label Last Name 
+					input.form-control(type = 'text', name='lname', oninvalid="this.setCustomValidity('Enter Last Name')",  oninput="setCustomValidity('')", pattern ='[A-Za-z].{1,}', placeholder = 'Dela Cruz', required)
+					br
+
+					label Student Number 
+					input.form-control(type = 'text', name='sn', oninvalid="this.setCustomValidity('Enter Student Number)",  oninput="setCustomValidity('')", pattern = '[0-9A-Z-].{1,15}', placeholder = '2010-01234-MN-0' required)
+					br
+
+				.form-group
+					label Email 
+					input.form-control(type = 'email', name='email', oninvalid="this.setCustomValidity('Enter your email address')",  oninput="setCustomValidity('')", placeholder = 'juan.dc@gmail.com' required )
+
+				.form-group
+					label Room: 
+					br
+					hr
+					||
+					input(type='radio', name='room', value='Room 302')
+					| CEA 302 |
+
+					input(type='radio', name='room', value='Room 316')
+					| CEA 316 |
+
+					input(type='radio', name='room', value='Room 315')
+					| CEA 315 |
+					hr
+
+					||
+					input(type='radio', name='room', value='Room 314')
+					| CEA 314 |
+
+					input(type='radio', name='room', value='Room 313')
+					| CEA 313 |
+
+					input(type='radio', name='room', value='Room 312')
+					| CEA 312 |
+					hr
+
+					||
+					input(type='radio', name='room', value='Room 311')
+					| CEA 311 |
+
+					input(type='radio', name='room', value='Room 310')
+					| CEA 310 |
+
+					input(type='radio', name='room', value='Room 413')
+					| CEA 413 |
+					hr
+
+				.form-group
+					label Day 
+					input.form-control(type = 'text', name='day', oninvalid="this.setCustomValidity('Enter the Day')",  oninput="setCustomValidity('')", pattern ='[A-Za-z].{1,}', placeholder = 'Monday', required)
+
+				.form-group
+					label Date 
+					input.form-control(type = 'text', name='date', oninvalid="this.setCustomValidity('Enter the Date: YYYY-MM-DD')",  oninput="setCustomValidity('')", pattern = '(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))', placeholder = '2011-03-21', required)
+
+				.form-group
+					label Time 
+					input.form-control(type = 'text', name='time',oninvalid="this.setCustomValidity('Enter the time')",  oninput="setCustomValidity('')", pattern = '[0-9:-].{1,}', placeholder = '7:30-10:30', required)
+
+
+				.form-group
+					label Message: 
+					br
+					textarea.form-control(name='message', oninvalid="this.setCustomValidity('Enter your messsage)",  oninput="setCustomValidity('')",placeholder='Enter Message...', required)
+				
+
+				button.btn.btn-default(type='submit') Submit
+
+				br
+				br
+				br

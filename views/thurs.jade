@@ -1,0 +1,53 @@
+extend layout
+
+block content
+ center
+  h1 Thursday Schedules
+  br
+  p
+    
+    
+    if (!user)
+      |  
+     
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !thurs.length
+            tr
+              td(colspan=4) You should add a Thursday Schedule
+          else
+            each thurss in thurs
+              tr
+                td
+              
+                td #{thurss.room}
+                td #{thurss.stime}
+                td #{thurss.etime)  
+    else
+      a#add.btn.btn-default(href="/thurs/add4") Add new
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !thurs.length
+            tr
+              td(colspan=4) You should add a Thursday Schedule
+          else
+            each thurss in thurs
+              tr
+                td
+              
+                td
+                  a(href="/thurs/#{thurss.id}") #{thurss.room}
+                td #{thurss.stime}
+                td #{thurss.etime)

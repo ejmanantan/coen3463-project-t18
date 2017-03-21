@@ -1,0 +1,45 @@
+extends layout
+
+block content
+	.row
+			.col-md-4
+			.col-md-4
+				h1 Add Saturday Schedule
+				form(role="form", method="post", action="/sat/")
+				
+					.form-group
+						label(for="fullname") Student Name
+						input#fullname.form-control(name="name", type="text",  oninvalid="this.setCustomValidity('Enter the Full Name')",  oninput="setCustomValidity('')", pattern ='[A-Za-z].{1,}', placeholder = 'Juan Dela Cruz', required)
+
+					.form-group
+						label(for="fullname") Student Number
+						input#fullname.form-control(name="sn", type="text",  oninvalid="this.setCustomValidity('Enter Student Number Name')",  oninput="setCustomValidity('')", pattern = '[0-9A-Z-].{1,15}', placeholder = '2010-01234-MN-0' required)
+
+					.form-group
+						label(for="fullname") Email
+						input#fullname.form-control(name="email", type="email",  oninvalid="this.setCustomValidity('Enter your E-mail Name')",  oninput="setCustomValidity('')", placeholder = 'juan.dc@gmail.com' required)
+
+					.form-group
+						label(for="nickname") Room Number
+						br
+						input#fullname.form-control(name="room", type="text",  oninvalid="this.setCustomValidity('Enter the Room Number')",  oninput="setCustomValidity('')", pattern = '[0-9A-Z].{6}', placeholder = 'CEA 316', required) 
+
+					.form-group
+						label(for="fullname") Start of Time
+						input#fullname.form-control(name="stime", type="text",  oninvalid="this.setCustomValidity('Enter the start time')",  oninput="setCustomValidity('')", pattern = '[0-9:].{1,}', placeholder = '7:30', required)
+
+					.form-group
+						label(for="job") End of Time
+						br
+						input#fullname.form-control(name="etime", type="text",  oninvalid="this.setCustomValidity('Enter end of time')",  oninput="setCustomValidity('')", pattern = '[0-9:].{1,}', placeholder = '10:30', required)
+
+					.form-group
+						label(for="youtube") Purpose
+						input#fullname.form-control(name="purps", type="text",  oninvalid="this.setCustomValidity('Enter the purpose')",  oninput="setCustomValidity('')", pattern = '[A-Za-z].{1,}', placeholder = 'Event for Seminars', required)
+
+					.form-group
+						label(for="job") Date
+						br
+						input#fullname.form-control(name="date", type="text",  oninvalid="this.setCustomValidity('Enter the Date: YYYY-MM-DD')",  oninput="setCustomValidity('')", pattern = '(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))', placeholder = '2011-03-21', required)
+
+					button.btn.btn-primary(type="submit") Add Saturday Schedule

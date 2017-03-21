@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    br
+    br
+    br
+    br
+    center
+        h1 Register
+        form(role="form", action="/auth/register", method="post")
+            .form-group
+                center
+                    label(for="username") Username
+                    input#username.form-control(name="username", pattern='[A-Za-z]{8,}',  placeholder = 'juandelacruz', type="text", required)
+            .form-group
+                center
+                    label(for="password") Password
+                    input#password.form-control(name="password", type="password", placeholder = '********' required)
+            center
+                a.btn.btn-link(href="/") Cancel
+                button.btn.btn-default(type="submit", value="Register") Register

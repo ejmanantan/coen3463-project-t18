@@ -1,0 +1,53 @@
+extend layout
+
+block content
+ center
+  h1 Friday Schedules
+  br
+  p
+    
+    
+    if (!user)
+      |  
+     
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !fri.length
+            tr
+              td(colspan=4) You should add a Friday Schedule
+          else
+            each fris in fri
+              tr
+                td
+              
+                td #{fris.room}
+                td #{fris.stime}
+                td #{fris.etime) 
+    else
+      a#add.btn.btn-default(href="/fri/add5") Add new
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !fri.length
+            tr
+              td(colspan=4) You should add a Friday Schedule
+          else
+            each fris in fri
+              tr
+                td
+              
+                td
+                  a(href="/fri/#{fris.id}") #{fris.room}
+                td #{fris.stime}
+                td #{fris.etime)

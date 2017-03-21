@@ -1,0 +1,53 @@
+extend layout
+
+block content
+ center
+  h1 Monday Schedules
+  br
+  p
+    
+    
+    if (!user)
+      |  
+     
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !mon.length
+            tr
+              td(colspan=4) You should add a Monday Schedule
+          else
+            each mons in mon
+              tr
+                td
+              
+                td #{mons.room}
+                td #{mons.stime}
+                td #{mons.etime)   
+    else
+      a#add.btn.btn-default(href="/mon/add1") Add new
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !mon.length
+            tr
+              td(colspan=4) You should add a Monday Schedule
+          else
+            each mons in mon
+              tr
+                td
+              
+                td
+                  a(href="/mon/#{mons.id}") #{mons.room}
+                td #{mons.stime}
+                td #{mons.etime)   

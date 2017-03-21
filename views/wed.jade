@@ -1,0 +1,53 @@
+extend layout
+
+block content
+ center
+  h1 Wednesday Schedules
+  br
+  p
+    
+    
+    if (!user)
+      |  
+     
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !wed.length
+            tr
+              td(colspan=4) You should add a Wednesday Schedule
+          else
+            each weds in wed
+              tr
+                td
+              
+                td #{weds.room}
+                td #{weds.stime}
+                td #{weds.etime) 
+    else
+      a#add.btn.btn-default(href="/wed/add3") Add new
+      table.table
+        thead
+          tr
+            th
+            th Room/s
+            th Start Time
+            th End Time
+        tbody
+          if !wed.length
+            tr
+              td(colspan=4) You should add a Wednesday Schedule
+          else
+            each weds in wed
+              tr
+                td
+              
+                td
+                  a(href="/wed/#{weds.id}") #{weds.room}
+                td #{weds.stime}
+                td #{weds.etime) 
