@@ -17,6 +17,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !mon.length
             tr
@@ -28,7 +29,8 @@ block content
               
                 td #{mons.room}
                 td #{mons.stime}
-                td #{mons.etime)   
+                td #{mons.etime}
+                td #{mons.name)    
     else
       a#add.btn.btn-default(href="/mon/add1") Add new
       table.table
@@ -38,6 +40,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !mon.length
             tr
@@ -50,4 +53,5 @@ block content
                 td
                   a(href="/mon/#{mons.id}") #{mons.room}
                 td #{mons.stime}
-                td #{mons.etime)   
+                td #{mons.etime)
+                td #{mons.name)    

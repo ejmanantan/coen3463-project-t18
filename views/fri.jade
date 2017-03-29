@@ -17,6 +17,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !fri.length
             tr
@@ -29,6 +30,7 @@ block content
                 td #{fris.room}
                 td #{fris.stime}
                 td #{fris.etime) 
+                td #{fris.name) 
     else
       a#add.btn.btn-default(href="/fri/add5") Add new
       table.table
@@ -38,6 +40,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !fri.length
             tr
@@ -51,3 +54,4 @@ block content
                   a(href="/fri/#{fris.id}") #{fris.room}
                 td #{fris.stime}
                 td #{fris.etime)
+                td #{fris.name) 

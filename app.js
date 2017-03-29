@@ -23,6 +23,8 @@ var thurs = require('./routes/thurs');
 var fri = require('./routes/fri');
 var sat = require('./routes/sat');
 var contact = require('./routes/contact');
+var contact = require('./routes/contact');
+
 
 var app = express();
 

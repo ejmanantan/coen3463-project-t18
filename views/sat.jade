@@ -17,6 +17,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !sat.length
             tr
@@ -28,7 +29,8 @@ block content
               
                 td #{sats.room}
                 td #{sats.stime}
-                td #{sats.etime) 
+                td #{sats.etime)
+                td #{sats.name) 
     else
       a#add.btn.btn-default(href="/sat/add6") Add new
       table.table
@@ -38,6 +40,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !sat.length
             tr
@@ -50,4 +53,5 @@ block content
                 td
                   a(href="/sat/#{sats.id}") #{sats.room}
                 td #{sats.stime}
-                td #{sats.etime)  
+                td #{sats.etime) 
+                td #{sats.name)  

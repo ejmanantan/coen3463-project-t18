@@ -17,6 +17,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !wed.length
             tr
@@ -29,6 +30,7 @@ block content
                 td #{weds.room}
                 td #{weds.stime}
                 td #{weds.etime) 
+                td #{weds.name) 
     else
       a#add.btn.btn-default(href="/wed/add3") Add new
       table.table
@@ -38,6 +40,7 @@ block content
             th Room/s
             th Start Time
             th End Time
+            th Reserved By
         tbody
           if !wed.length
             tr
@@ -51,3 +54,4 @@ block content
                   a(href="/wed/#{weds.id}") #{weds.room}
                 td #{weds.stime}
                 td #{weds.etime) 
+                td #{weds.name) 
